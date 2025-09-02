@@ -10,8 +10,9 @@ arr.forEach(button => {
 
         if (value === '=') {
             try {
-                string = eval(string);   // evaluate expression
-                input.value = string;    // show result
+                let result = eval(string); // calculate
+                input.value = result;      // display result
+                string = result.toString(); // keep result for next calculation
             } catch {
                 input.value = "Error";   // show error if invalid
                 string = "";
@@ -31,3 +32,4 @@ arr.forEach(button => {
         }
     });
 });
+
